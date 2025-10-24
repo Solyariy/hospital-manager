@@ -6,3 +6,5 @@ from hospital.views import base
 urlpatterns = [
     path("", base.index, name="index")
 ]
+
+app_name = "base"
