@@ -39,6 +39,9 @@ class Patient(models.Model):
         max_length=64,
     )
 
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"
+
 
 class Task(models.Model):
     class Priority(models.TextChoices):
@@ -58,7 +61,8 @@ class Task(models.Model):
     task_type = models.ForeignKey(
         TaskType,
         related_name="tasks",
-        on_delete=models.SET_NULL
+        on_delete=models.SET_NULL,
+        null=True
     )
     assignees = models.ManyToManyField(
         Worker,

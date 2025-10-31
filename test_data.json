@@ -1,0 +1,150 @@
+[
+  {
+    "model": "hospital.specialty",
+    "pk": 1,
+    "fields": {
+      "name": "Cardiology"
+    }
+  },
+  {
+    "model": "hospital.specialty",
+    "pk": 2,
+    "fields": {
+      "name": "Neurology"
+    }
+  },
+  {
+    "model": "hospital.specialty",
+    "pk": 3,
+    "fields": {
+      "name": "Pediatrics"
+    }
+  },
+
+  {
+    "model": "hospital.worker",
+    "pk": 1,
+    "fields": {
+      "specialty": 1,
+      "username": "dr_smith",
+      "email": "dr.smith@hospital.com",
+      "password": "pbkdf2_sha256$260000$abc$hash",
+      "first_name": "John",
+      "last_name": "Smith"
+    }
+  },
+  {
+    "model": "hospital.worker",
+    "pk": 2,
+    "fields": {
+      "specialty": 2,
+      "username": "dr_jones",
+      "email": "dr.jones@hospital.com",
+      "password": "pbkdf2_sha256$260000$abc$hash",
+      "first_name": "Alice",
+      "last_name": "Jones"
+    }
+  },
+  {
+    "model": "hospital.worker",
+    "pk": 3,
+    "fields": {
+      "specialty": 3,
+      "username": "nurse_kim",
+      "email": "kim@hospital.com",
+      "password": "pbkdf2_sha256$260000$abc$hash",
+      "first_name": "Kim",
+      "last_name": "Lee"
+    }
+  },
+
+  {
+    "model": "hospital.patient",
+    "pk": 1,
+    "fields": {
+      "first_name": "Michael",
+      "last_name": "Brown"
+    }
+  },
+  {
+    "model": "hospital.patient",
+    "pk": 2,
+    "fields": {
+      "first_name": "Sophia",
+      "last_name": "Wilson"
+    }
+  },
+  {
+    "model": "hospital.patient",
+    "pk": 3,
+    "fields": {
+      "first_name": "Lucas",
+      "last_name": "Taylor"
+    }
+  },
+
+  {
+    "model": "hospital.tasktype",
+    "pk": 1,
+    "fields": {
+      "name": "Consultation"
+    }
+  },
+  {
+    "model": "hospital.tasktype",
+    "pk": 2,
+    "fields": {
+      "name": "Surgery"
+    }
+  },
+  {
+    "model": "hospital.tasktype",
+    "pk": 3,
+    "fields": {
+      "name": "Check-up"
+    }
+  },
+
+  {
+    "model": "hospital.task",
+    "pk": 1,
+    "fields": {
+      "name": "Heart Checkup",
+      "description": "Routine heart checkup for patient with mild chest pain",
+      "planned_on": "2025-11-02T10:00:00Z",
+      "is_canceled": false,
+      "priority": "HIGH",
+      "task_type": 1,
+      "assignees": [1, 3],
+      "patients": [1]
+    }
+  },
+  {
+    "model": "hospital.task",
+    "pk": 2,
+    "fields": {
+      "name": "Brain MRI Review",
+      "description": "Review MRI results for possible lesion detection",
+      "planned_on": "2025-11-03T12:30:00Z",
+      "is_canceled": false,
+      "priority": "MEDIUM",
+      "task_type": 1,
+      "assignees": [2],
+      "patients": [2]
+    }
+  },
+  {
+    "model": "hospital.task",
+    "pk": 3,
+    "fields": {
+      "name": "Child Vaccination",
+      "description": "Administer MMR vaccine to 3-year-old patient",
+      "planned_on": "2025-11-04T09:00:00Z",
+      "is_canceled": false,
+      "priority": "LOW",
+      "task_type": 3,
+      "assignees": [3],
+      "patients": [3]
+    }
+  }
+]
